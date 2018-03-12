@@ -40,7 +40,7 @@ def ti(x):
 
 
 for e in db:
-    hql = 'select pdevicetype,from_unixtime (CAST (ts/ 1000 AS BIGINT),"yyyy-MM-dd HH:mm:ss") ts,from_unixtime (CAST (ts/ 1000 AS BIGINT),"yyyy-MM-dd") dd,macid,argsext["60600B"] f60600B,argsext["606006"] f606006,argsext["60600t"] f60600t,argsext["606007"] f606007,argsext["606005"] f606005,argsext["606001"] f606001,argsext["606004"] f606004 from ods_kafka_device_datareportinfo where pdevicetype="06012004"  and pdate = %s%s%s and pday = %s%s%s and name = "sendDeviceStatus" and argsext["60600B"]>0 and macid ="DC330D4AC835"'% ('"', mon, '"', '"', e, '"')
+    hql = 'select pdevicetype,from_unixtime (CAST (ts/ 1000 AS BIGINT),"yyyy-MM-dd HH:mm:ss") ts,from_unixtime (CAST (ts/ 1000 AS BIGINT),"yyyy-MM-dd") dd,macid,argsext["60600B"] f60600B,argsext["606006"] f606006,argsext["60600t"] f60600t,argsext["606007"] f606007,argsext["606005"] f606005,argsext["606001"] f606001,argsext["606004"] f606004 from ods_kafka_device_datareportinfo where pdevicetype="dddddddd"  and pdate = %s%s%s and pday = %s%s%s and name = "sendDeviceStatus" and argsext["60600B"]>0 and macid ="dddddddddddddd"'% ('"', mon, '"', '"', e, '"')
     hiveConn = hive.connect(host="ip address", port=10000, username="uname", database='dname')
     cursor = hiveConn.cursor()
     cursor.execute(hql)
